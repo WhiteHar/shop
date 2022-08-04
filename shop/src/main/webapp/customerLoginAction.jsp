@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="vo.*" %>
 <%
+p
+
 	// 인코딩
 	request.setCharacterEncoding("utf-8");
 
@@ -14,7 +16,7 @@
 	System.out.println("pass: " + pass);
 	
 	// member 객체 생성
-	CustomerVO member = new CustomerVO();
+	Customer member = new Customer();
 	// 정보 삽입(set)
 	member.setId(id);
 	member.setPass(pass);
@@ -24,7 +26,6 @@
 	System.out.println("member.getPass: " + member.getPass());
 	
 	// CustomerDao 메서드 실행
-	
 %>
 <!DOCTYPE html>
 <html>

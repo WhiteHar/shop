@@ -1,14 +1,12 @@
 package vo;
 
-public class CustomerVO {
+public class Employee {
 	private String id;
 	private String pass;
 	private String name;
-	private String address;
-	private String phone;
 	private String update_date;
 	private String create_date;
-	
+	private char active;
 	
 	
 	public String getId() {
@@ -29,18 +27,6 @@ public class CustomerVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
 	public String getUpdate_date() {
 		return update_date;
 	}
@@ -53,5 +39,20 @@ public class CustomerVO {
 	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
+	public char getActive() {
+		return active;
+	}
+	public void setActive(char active) {
+		this.active = active;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", pass=" + pass + ", name=" + name + ", update_date=" + update_date
+				+ ", create_date=" + create_date + ", active=" + active + "]";
+	}
+	
+	
 	
 }
