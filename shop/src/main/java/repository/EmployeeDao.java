@@ -1,10 +1,9 @@
-package dao;
+package repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import repository.DBUtil;
 import vo.Employee;
 
 public class EmployeeDao {
