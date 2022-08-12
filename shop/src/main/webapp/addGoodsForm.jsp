@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="<%=request.getContextPath()%>/admin/addGoodsAction.jsp"
+	method="post" enctype="file"
+	>
+	
+	
+	</form>
 
 </body>
 </html>

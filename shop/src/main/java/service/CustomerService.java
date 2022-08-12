@@ -8,6 +8,7 @@ import repository.OutIdDao;
 import vo.Customer;
 
 public class CustomerService {
+	
 	public boolean removeCustomer(Customer paramCustomer ) {
 		Connection conn = null;
 		try {

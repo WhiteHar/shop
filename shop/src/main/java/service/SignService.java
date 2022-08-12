@@ -1,7 +1,9 @@
 package service;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
+import repository.DBUtil;
 import repository.SignDao;
 
 public class SignService {
@@ -10,22 +12,34 @@ public class SignService {
 	// true : 사용 가능한 아이디
 	// false : 사용 불가한 아이디
 	public boolean idCheck(String id) {
-		this.signDao = new SignDao();
+		boolean result = false;
 		Connection conn = null;
+		System.out.println("SignService");
 		
 		try {
-			if(signDao.idCheck(null, id) == null) {
-				rs = true;
+			conn = new DBUtil().getConnection();
+			conn.setAutoCommit(result);
+			this.signDao = new SignDao();
+			if(signDao.idCheck(conn, id)==null) {
+				result = true;
 			}
 			conn.commit();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
-			conn.rollback();
+			try {
+				conn.rollback();
+			}catch(SQLException e1) {
+				e1.printStackTrace();
+			}
 		}finally {
-			
-			
-			// conn --
+			try {
+				conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
-		signDao.idCheck(null, id);
+		return result;
+		
 	}
 }

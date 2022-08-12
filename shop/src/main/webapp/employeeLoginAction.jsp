@@ -16,12 +16,13 @@
 	String id = request.getParameter("employeeId");
 	String pass = request.getParameter("employeePass");
 	
+	// 디버깅
 	System.out.println("id: " + id);
 	System.out.println("pass: " + pass);
 	
 	member.setId(id);
 	member.setPass(pass);
-	
+	// 디버깅
 	System.out.println("member.getId: " + member.getId());
 	System.out.println("member.getPass: " + member.getPass());
 	
@@ -31,11 +32,12 @@
 		response.sendRedirect(request.getContextPath()+"/loginForm.jsp?errorMsg=please login again");
 		return;
 	}
-	session.setAttribute("user", "EMPLOYEE");
-	session.setAttribute("id", id);
+	session.setAttribute("user", "Employee");
+	session.setAttribute("id", loginEmployee.getId());
+	System.out.println(session.getAttribute("id"));
 	session.setAttribute("name", loginEmployee.getName());
 	
 	System.out.println("로그인 성공");
-	session.setAttribute("loginCustomer", loginEmployee);
+	session.setAttribute("loginEmployee", loginEmployee);
 	response.sendRedirect(request.getContextPath()+"/adminIndex.jsp");
 %>

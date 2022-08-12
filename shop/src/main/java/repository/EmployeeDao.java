@@ -35,6 +35,8 @@ public class EmployeeDao {
 		return loginEmployee;
 	}
 	
+	
+	
 	public int deleteEmployee(Connection conn, Employee paramEmployee) throws Exception{
 		String sql = "DELETE FROM employee WHERE employee_id= ? AND employee_pass=PASSWORD(?)";
 		int row = 0;
