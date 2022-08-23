@@ -32,6 +32,7 @@ public class SignDao {
 		try {
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, id);
+			System.out.println("SignDao.java idCheck stmt : " + stmt);
 			rs = stmt.executeQuery();
 			if(rs.next()) {
 				ckId = rs.getString("t.id");

@@ -23,6 +23,7 @@
 					</tr>
 				</table>
 				<button type="button" id="customerBtn">고객 로그인</button>
+				<a href="<%=request.getContextPath()%>/addCustomer.jsp">회원가입</a>
 			</fieldset>
 		</form>
 	
@@ -43,6 +44,7 @@
 						</tr>
 					</table>
 					<button type="button" id="employeeBtn">스탭 로그인</button>
+					<a href="<%=request.getContextPath()%>/addEmployee.jsp"> 스탭 회원가입</a>
 			</fieldset>
 		</form>
 	</div>
@@ -60,9 +62,9 @@
 	
 	$('#employeeBtn').click(function(){
 		if($('#employeeId').val() == '') {
-			alert('스텝 아이디를 입력하세요');
+			alert('스탭 아이디를 입력하세요');
 		} else if($('#employeePass').val() == '') {
-			alert('스텝 패스워드를 입력하세요');
+			alert('스탭 패스워드를 입력하세요');
 		} else {
 			employeeForm.submit();
 		}

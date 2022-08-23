@@ -12,7 +12,7 @@ public class OutIdDao {
 			stmt.setString(1, customerId);
 			row = stmt.executeUpdate();
 		}finally {
-			stmt.close();
+			if(stmt!=null) {stmt.close();}
 		}
 		return row;
 	}

@@ -11,7 +11,7 @@
 	<form action="<%=request.getContextPath() %>/idCheckAction.jsp" method="post">
 		<div>
 			ID체크
-			<input type = "text" name="ckId">
+			<input type = "text" name="ckId"><input type="hidden" name="c" id="c" value="Customer">
 			<button type = "submit">아이디 중복검사</button>
 		</div>
 	</form>

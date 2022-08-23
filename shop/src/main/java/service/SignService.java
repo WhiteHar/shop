@@ -7,6 +7,7 @@ import repository.DBUtil;
 import repository.SignDao;
 
 public class SignService {
+	private DBUtil dbUtil;
 	private SignDao signDao;
 	// return
 	// true : 사용 가능한 아이디
@@ -14,12 +15,16 @@ public class SignService {
 	public boolean idCheck(String id) {
 		boolean result = false;
 		Connection conn = null;
+		
 		System.out.println("SignService");
+		this.signDao = new SignDao();
+		this.dbUtil = new DBUtil();
 		
 		try {
 			conn = new DBUtil().getConnection();
-			conn.setAutoCommit(result);
-			this.signDao = new SignDao();
+			System.out.println("SignService.java idCheck conn : " + conn);
+			conn.setAutoCommit(false);
+			// idcheck 실행 시 null(중복없음)확인 시 사용가능
 			if(signDao.idCheck(conn, id)==null) {
 				result = true;
 			}
@@ -33,10 +38,12 @@ public class SignService {
 				e1.printStackTrace();
 			}
 		}finally {
-			try {
-				conn.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
+			if(conn!=null) {
+				try {
+					conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return result;

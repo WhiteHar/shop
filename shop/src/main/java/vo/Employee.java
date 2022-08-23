@@ -6,7 +6,7 @@ public class Employee {
 	private String name;
 	private String update_date;
 	private String create_date;
-	private char active;
+	private String active;
 	
 	
 	public String getId() {
@@ -39,10 +39,10 @@ public class Employee {
 	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
-	public char getActive() {
+	public String getActive() {
 		return active;
 	}
-	public void setActive(char active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 	

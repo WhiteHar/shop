@@ -11,7 +11,7 @@
 		<h1><%=session.getAttribute("user")%><!-- customer / employee --></h1>
 		<table>
 			<tr>
-				<td>id</td>
+				<td>id</td>	
 				<td><%=session.getAttribute("id") %>	<!-- 로그인 아이디 --></td>
 			</tr>
 		<br>
