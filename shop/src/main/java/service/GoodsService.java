@@ -84,7 +84,7 @@ public class GoodsService {
 		
 		
 		int beginRow = 0;
-		list = goodsDao.selectGoodsListByPage(conn, rowPerPage, beginRow);
+		// 수정필요 list = goodsDao.selectGoodsListByPage(conn, rowPerPage, beginRow);
 		return list;
 	}
 	
